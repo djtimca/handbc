@@ -1,0 +1,17 @@
+{
+  "domain": "ndbcrealtime",
+  "name": "NDBC Buoy Realtime Observation Data",
+  "config_flow": true,
+  "documentation": "https://github.com/djtimca/handbc",
+  "requirements": [
+    "ndbcrealtime==0.0.4"
+  ],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": [
+    "@djtimca"
+  ],
+  "version": "001"
+}

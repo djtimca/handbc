@@ -1,0 +1,23 @@
+{
+  "title": "NDBC Real Time Buoy Data",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Observation Station Selection",
+        "description": "Select the NDBC Station you would like to monitor.",
+        "data": {
+          "station_id": "Station"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Can't connect to NDBC real-time data.",
+      "unknown": "Unknown error.",
+      "invalid_station_id": "Invalid NDBC Station ID"
+    },
+    "abort": {
+      "single_instance_allowed": "This station is already configured.",
+      "invalid_station_id": "Invalid NDBC Station ID"
+    }
+  }
+}
