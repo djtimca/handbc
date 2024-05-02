@@ -9,7 +9,7 @@ from homeassistant.const import (
     ATTR_NAME, 
     UnitOfTemperature,
     DEGREES,
-    TIME_SECONDS
+    UnitOfTime
 )
 import homeassistant.helpers.config_validation as cv
 import homeassistant.util.dt as dt_util
@@ -251,7 +251,7 @@ class NDBCSensor(CoordinatorEntity[NDBCUpdater], SensorEntity):
         unit = self._raw_unit
 
         if unit == "sec":
-            unit = TIME_SECONDS
+            unit = UnitOfTime.SECONDS
         elif unit == "degC":
             unit = UnitOfTemperature.CELSIUS
         elif unit == "degF":
