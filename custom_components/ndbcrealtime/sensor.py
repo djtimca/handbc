@@ -7,9 +7,8 @@ from datetime import timedelta
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.const import (
     ATTR_NAME, 
-    TEMP_CELSIUS, 
-    TEMP_FAHRENHEIT, 
-    DEGREE,
+    UnitOfTemperature,
+    DEGREES,
     TIME_SECONDS
 )
 import homeassistant.helpers.config_validation as cv
@@ -251,14 +250,14 @@ class NDBCSensor(CoordinatorEntity[NDBCUpdater], SensorEntity):
         """Return the unit of measurement."""
         unit = self._raw_unit
 
-        if unit[0:3] == "deg":
-            unit = DEGREE
-        elif unit == "sec":
+        if unit == "sec":
             unit = TIME_SECONDS
         elif unit == "degC":
-            unit = TEMP_CELSIUS
+            unit = UnitOfTemperature.CELSIUS
         elif unit == "degF":
-            unit = TEMP_FAHRENHEIT
+            unit = UnitOfTemperature.FAHRENHEIT
+        elif unit[0:3] == "deg":
+            unit = DEGREES
 
         return unit
 
