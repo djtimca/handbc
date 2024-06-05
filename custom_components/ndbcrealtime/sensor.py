@@ -8,7 +8,7 @@ from homeassistant.components.sensor import SensorEntity
 from homeassistant.const import (
     ATTR_NAME, 
     UnitOfTemperature,
-    DEGREES,
+    DEGREE,
     UnitOfTime
 )
 import homeassistant.helpers.config_validation as cv
@@ -257,7 +257,7 @@ class NDBCSensor(CoordinatorEntity[NDBCUpdater], SensorEntity):
         elif unit == "degF":
             unit = UnitOfTemperature.FAHRENHEIT
         elif unit[0:3] == "deg":
-            unit = DEGREES
+            unit = DEGREE
 
         return unit
 
