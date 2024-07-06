@@ -63,10 +63,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         COORDINATOR: coordinator,
     }
 
-    for component in PLATFORMS:
-        _LOGGER.info("Setting up platform: %s", component)
-        await hass.config_entries.async_forward_entry_setup(entry, component)
-
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
+    
     return True
 
 
